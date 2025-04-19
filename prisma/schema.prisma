@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String           @id @default(cuid()) @map("_id")
+  clerkId          String           @unique
+  email            String           @unique
+  firstName        String
+  lastName         String
+  image            String?
+  age              Int?
+  height           Int?
+  weight           Int?
+  gender           String?
+  bloodGroup       String?
+  medicalIssues    String?
+  stripeCustomerId String?          @map("stripe_customer_id")
+  stripeInvoiceId  String?          @map("stripe_invoice_id")
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  medications      Medication[]
+  mentalwellness   MentalWellness[]
+  messages         Message[]
+  symptoms         Symptom[]
+}
+
+model Symptom {
+  id        String      @id @default(cuid()) @map("_id")
+  userId    String
+  name      SymptomName
+  intensity Int
+  frequency Frequency
+  loggedAt  DateTime?   @default(now())
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Medication {
+  id        String    @id @default(cuid()) @map("_id")
+  userId    String
+  name      String
+  dosage    String
+  purpose   String?
+  frequency Frequency
+  adherence Adherence
+  startDate DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model MentalWellness {
+  id        String  @id @default(cuid()) @map("_id")
+  userId    String
+  mood      Mood
+  happiness Int
+  sleep     Sleep
+  stress    Stress
+  anxiety   String?
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id        String   @id @default(cuid()) @map("_id")
+  role      Role
+  userId    String
+  content   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Role {
+  user
+  model
+}
+
+enum Frequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+  RARELY
+}
+
+enum SymptomName {
+  HEADACHE
+  NAUSEA
+  VOMITING
+  DIARRHEA
+  FATIGUE
+  DIZZINESS
+  INSOMNIA
+  CONSTIPATION
+  MUSCLE_PAIN
+  JOINT_PAIN
+  OTHER
+}
+
+enum Adherence {
+  ALWAYS
+  OFTEN
+  SOMETIMES
+  NEVER
+  RARELY
+}
+
+enum Mood {
+  HAPPY
+  SAD
+  ANGRY
+  ANXIOUS
+  STRESSED
+  NEUTRAL
+}
+
+enum Sleep {
+  GOOD
+  BAD
+  AVERAGE
+}
+
+enum Stress {
+  NOT_STRESSED
+  SLIGHTLY
+  MODERATELY
+  HIGHLY
+  EXTREMELY
+}
