@@ -1,4 +1,4 @@
-# 🧬 Swasthya Darpan — Your AI Health Companion
+# 🧬 Swasthya Darpan - Your AI Health Companion
 
 > 🔬 **AI-Powered Drug Research & Generic Medicine Recommender**  
 > 🚀 Built with ❤️ by **Team DEVX AVES** @ AIGNITE’25
