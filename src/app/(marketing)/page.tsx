@@ -126,7 +126,7 @@ const Homepage = async () => {
       {/* Companies Section */}
       <MaxWidthWrapper>
         <AnimationContainer delay={0.4}>
-          <div className="relative py-20 overflow-hidden">
+          <div className="relative py-20 overflow-hidden bg-gray-400 rounded-xl">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 opacity-30 blur-3xl"></div>
             <div className="relative z-10 mx-auto px-4 md:px-8">
               <h2 className="bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-12 font-heading font-medium text-center text-sm text-transparent uppercase tracking-wider">
@@ -137,7 +137,7 @@ const Homepage = async () => {
                   {COMPANIES.map((company) => (
                     <li
                       key={company.name}
-                      className="transition-all duration-300 hover:scale-110"
+                      className="transition-all duration-300 hover:scale-110 bg-gray-400"
                     >
                       <Image
                         src={company.logo}

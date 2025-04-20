@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const generateMetadata = ({
-    title = `${process.env.NEXT_PUBLIC_APP_NAME} - Your Personal Health Assistant`,
-    description = `${process.env.NEXT_PUBLIC_APP_NAME} is a comprehensive virtual health coach platform that leverages AI to provide personalized health and wellness recommendations.`,
+    title = `Swasthya Darpan - Your Personal Health Assistant`,
+    description = `Swasthya Darpan is a comprehensive virtual health coach platform that leverages AI to provide personalized health and wellness recommendations.`,
     image = "/images/thumbnail.png",
     icons = [
         {

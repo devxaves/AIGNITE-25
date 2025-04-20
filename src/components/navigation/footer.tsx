@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className="w-full relative bottom-0 border-t border-border pt-20 pb-8">
             <MaxWidthWrapper>
                 <AnimationContainer>
-                    <div className="flex flex-col md:flex-row items-start justify-between w-full">
+                    <div className="flex flex-col md:flex-row items-center justify-center w-full">
                         <div className="flex flex-col items-start justify-between w-full max-w-md mr-auto">
                             <div className="flex items-center gap-2 mb-6 md:mb-0">
                                 <Icons.logo className="w-8 h-8" />
@@ -39,7 +39,7 @@ const Footer = () => {
                                 </form>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 md:text-left mt-8 gap-20">
+                        <div className="grid grid-cols-2 md:text-left mt-8 gap-10">
                             <div>
                                 <h3 className="font-semibold mb-2">
                                     Company

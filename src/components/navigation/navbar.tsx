@@ -78,7 +78,7 @@ const Navbar = ({ user }: Props) => {
           {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-white bg-slate-200/75 rounded-md"
           >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

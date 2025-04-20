@@ -36,8 +36,8 @@ const DashboardNavbar = ({ isPro }: Props) => {
           </Sheet>
 
           <Link href="/dashboard" className="flex items-center gap-2 hover:scale-101 transition-transform duration-300">
-            <Icons.logo className="w-10 h-10 p-1 text-white rounded-full shadow-lg" />
-            <span className="text-2xl sm:text-3xl font-extrabold bg-clip-text text-transparent p-12 bg-gradient-to-r from-blue-600 via-purple-600 to-fuchsia-600">
+            <Icons.logo className="w-10 h-10 p-1 text-white rounded-full" />
+            <span className="text-2xl sm:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r bg-blue-800">
               Swasthya Darpan
             </span>
           </Link>
